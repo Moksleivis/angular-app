@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="header">
+    <img
+      class="container-image"
+      src="../../assets/comments.svg"
+      alt="Commenting"
+    />
+    <h2 class="exp">
+      The only thing better than having an amazing experience is sharing it with
+      someone who truly cares.
+    </h2>
+  </div>
+  <section class="comments-section">
+    <h2>Let us know about your experience!</h2>
+    <div class="comment-box">
+      <input
+        class="author-input"
+        id="author"
+        type="text"
+        placeholder="Author Name"
+        [(ngModel)]="newAuthor"
+      />
+      <textarea
+        rows="5"
+        cols="30"
+        class="comment-input"
+        placeholder="Tell us about your experience here"
+        [(ngModel)]="newComment"
+      ></textarea>
+      <button class="btn-comment" (click)="addComment()">Add Comment</button>
+      <ul class="comments-list">
+        <li class="comment" *ngFor="let comment of comments">
+          <div class="comment-author">
+            <h3 class="comment-author-name">{{ comment.author }}</h3>
+          </div>
+          <div class="comment-content">
+            <p>
+              {{ comment.content }}
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
